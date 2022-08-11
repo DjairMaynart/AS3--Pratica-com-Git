@@ -1,4 +1,6 @@
 import java.util.Scanner;
+import java.lang.Math;
+import java.util.Random;
 
 public class main {
 
@@ -34,11 +36,13 @@ public class main {
         int num;
         System.out.println("Digite a quantidade de termos:");
 
-        while (!scan.hasNextInt()) {
-			scan.next();
+        String sc = scan.next();
+
+        while (!isNumero(sc)||Integer.parseInt(sc)<1) {
 			System.out.println("Digite um valor válido");
+            sc = scan.next();
 		}
-		num = scan.nextInt();
+		num = Integer.parseInt(sc);
         scan.close();
 		
 		double a=1;
@@ -59,11 +63,13 @@ public class main {
         int num;
         System.out.println("Digite a quantidade de pontos:");
 
-        while (!scan.hasNextInt()) {
-			scan.next();
+        String sc = scan.next();
+
+        while (!isNumero(sc)||Integer.parseInt(sc)<1) {
 			System.out.println("Digite um valor válido");
+            sc = scan.next();
 		}
-		num = scan.nextInt();
+		num = Integer.parseInt(sc);
         scan.close();
 
         Random rand = new Random();
@@ -81,5 +87,14 @@ public class main {
 		r=r*4/num;
 		System.out.println("Aproximação de pi: "+r);
     }
+
+    public static boolean isNumero(String str) { 
+        try {  
+          Integer.parseInt(str);  
+          return true;
+        } catch(NumberFormatException e){  
+          return false;  
+        }  
+      }
 
 }
