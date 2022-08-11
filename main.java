@@ -18,7 +18,7 @@ public class main {
 				System.out.println("1");
                 scan.close();
 			}else if(num.equals("2")) {
-				System.out.println("2");
+				Leibniz();
                 scan.close();
 			}else {
 				System.out.println("Digite 1 ou 2:");
